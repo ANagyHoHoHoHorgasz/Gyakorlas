@@ -3,21 +3,25 @@ package app;
 import java.util.Scanner;
 
 public class Gyakorlas {
-///1 FELADAT
+
     public static void main(String[] args) {
+        //1.fel
         int szazalek;
         szazalek = bekeres("Hány százalék lett: ");
         koszontes(szazalek);
-        
+        //2.fel
         int homerseklet;
         homerseklet = bekeres2("Hány fok van: ");
         koszontes2(homerseklet);
-        
+        //3.fel
         int jegy;
+        int diak;
         jegy = bekeres3("Hány éves vagy?: ");
+        diak = bekeres32("Van diákod?(1=igen 2=nem): ");
+        koszontes32(diak, jegy);
         koszontes3(jegy);
     }
-
+//1 FELADAT
     private static int bekeres(String kerdes) {
         int szazalek;
 
@@ -47,7 +51,7 @@ public class Gyakorlas {
         }
         
     }
-    ///2 FELADAT
+    //2 FELADAT
     private static int bekeres2(String kerdes) {
         int homerseklet;
 
@@ -62,9 +66,11 @@ public class Gyakorlas {
 
         if (homerseklet <= 0) {
             System.out.println("fagy");
-        } else if (homerseklet >= 0 && homerseklet <= 7) {
+        } else if (homerseklet == 0) {
+            System.out.println("pont 0 fok van hideg de 0 fok");
+        }else if (homerseklet >= 0 && homerseklet <= 7) {
             System.out.println("hideg");
-        } else if (homerseklet >= 8 &&homerseklet <= 15) {
+        }else if (homerseklet >= 8 &&homerseklet <= 15) {
             System.out.println("kellemes");
         } else if (homerseklet >= 16 &&homerseklet <= 25) {
             System.out.println("meleg");
@@ -73,6 +79,7 @@ public class Gyakorlas {
         }
         
     }
+    //3 FELADAT
     private static int bekeres3(String kerdes) {
         int jegy;
 
@@ -81,6 +88,23 @@ public class Gyakorlas {
         jegy = scr.nextInt();
 
         return jegy;
+    }
+    private static int bekeres32(String kerdes) {
+        int diak;
+
+        System.out.print(kerdes);
+        Scanner scr = new Scanner(System.in);
+        diak = scr.nextInt();
+
+        return diak;}
+    private static void koszontes32(int diak, int jegy) {
+
+        if (diak == 1 && jegy >= 18) {
+            System.out.println("felnőtt 1760 Ft");
+        } else{
+            System.out.println("felnőtt 2200 Ft");
+        }
+        
     }
 
     private static void koszontes3(int jegy) {
@@ -91,9 +115,6 @@ public class Gyakorlas {
             System.out.println("gyerek jegy 1200 Ft");
         } else if (jegy >= 14 &&jegy <= 17) {
             System.out.println("diák, 1600 Ft");
-        } else if (jegy >= 18) {
-            System.out.println("felnőtt 2200 Ft");
-        }
-        
     }
+}
 }
