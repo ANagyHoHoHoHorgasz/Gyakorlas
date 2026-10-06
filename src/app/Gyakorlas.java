@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Gyakorlas {
 
     public static void main(String[] args) {
-        //1.fel
+        /*//1.fel
         int szazalek;
         szazalek = bekeres("Hány százalék lett: ");
         koszontes(szazalek);
@@ -19,7 +19,14 @@ public class Gyakorlas {
         jegy = bekeres3("Hány éves vagy?: ");
         diak = bekeres32("Van diákod?(1=igen 2=nem): ");
         koszontes32(diak, jegy);
-        koszontes3(jegy);
+        koszontes3(jegy);*/
+        //4.fel
+        int menu;
+        int kedvez;
+        menu = bekeres4("hambi(1) pizza(2) vagy saláta menü(3)?: ");
+        kedvez = bekeres42("Van kedvezményed?(1=igen 2=nem): ");
+        koszontes42(kedvez, menu);
+        koszontes4(menu);
     }
 //1 FELADAT
     private static int bekeres(String kerdes) {
@@ -117,4 +124,42 @@ public class Gyakorlas {
             System.out.println("diák, 1600 Ft");
     }
 }
-}
+    
+    private static int bekeres4(String kerdes) {
+        int menu;
+
+        System.out.print(kerdes);
+        Scanner scr = new Scanner(System.in);
+        menu = scr.nextInt();
+
+        return menu;
+    }
+    private static int bekeres42(String kerdes) {
+        int kedvez;
+
+        System.out.print(kerdes);
+        Scanner scr = new Scanner(System.in);
+        kedvez = scr.nextInt();
+
+        return kedvez;}
+    private static void koszontes42(int kedvez, int menu) {
+
+        if (kedvez == 1 && menu == 1) {
+            System.out.println("hamburger menü kedvezményes 1760Ft");
+        } else if (kedvez == 1&& menu == 2){
+            System.out.println("Pizza menü kedvezményes 2250Ft");
+        }else if (kedvez == 1&& menu == 3){
+            System.out.println("saláta menü kedvezményes 1620Ft");
+        }
+        
+    }
+
+    private static void koszontes4(int menu) {
+
+        if (menu >= 1) {
+            System.out.println("hamburger menü 2200Ft");
+        } else if (menu >= 2) {
+            System.out.println("pizza menü 2500Ft");
+        } else if (menu >= 3) {
+            System.out.println("saláta menü 1800Ft");
+        }}}
