@@ -6,13 +6,16 @@ public class Gyakorlas {
 ///1 FELADAT
     public static void main(String[] args) {
         int szazalek;
-
         szazalek = bekeres("Hány százalék lett: ");
         koszontes(szazalek);
+        
         int homerseklet;
-
         homerseklet = bekeres2("Hány fok van: ");
         koszontes2(homerseklet);
+        
+        int jegy;
+        jegy = bekeres3("Hány éves vagy?: ");
+        koszontes3(jegy);
     }
 
     private static int bekeres(String kerdes) {
@@ -67,6 +70,29 @@ public class Gyakorlas {
             System.out.println("meleg");
         } else if (homerseklet >= 25) {
             System.out.println("forró");
+        }
+        
+    }
+    private static int bekeres3(String kerdes) {
+        int jegy;
+
+        System.out.print(kerdes);
+        Scanner scr = new Scanner(System.in);
+        jegy = scr.nextInt();
+
+        return jegy;
+    }
+
+    private static void koszontes3(int jegy) {
+
+        if (jegy >= 0 && jegy <= 5) {
+            System.out.println("ingyenes");
+        } else if (jegy >= 6 &&jegy <= 13) {
+            System.out.println("gyerek jegy 1200 Ft");
+        } else if (jegy >= 14 &&jegy <= 17) {
+            System.out.println("diák, 1600 Ft");
+        } else if (jegy >= 18) {
+            System.out.println("felnőtt 2200 Ft");
         }
         
     }
